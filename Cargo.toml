@@ -8,3 +8,7 @@ edition = "2021"
 [[bin]]
 name = "dol"
 path = "src/dol/main.rs"
+
+[lib]
+name = "dollib"
+path = "src/dol.rs"
