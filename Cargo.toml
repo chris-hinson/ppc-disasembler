@@ -4,11 +4,18 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+elf = "0.7.4"
+strum = {version = "0.27.1", features = ["derive"]}
+strum_macros = "0.27.1"
 
 [[bin]]
 name = "dol"
 path = "src/dol/main.rs"
 
+[[bin]]
+name = "instr-parser"
+path = "src/instr-parser/main.rs"
+
 [lib]
-name = "dollib"
-path = "src/dol.rs"
+name = "ppc_disas"
+path = "src/lib.rs"

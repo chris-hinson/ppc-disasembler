@@ -1,7 +1,6 @@
-use dollib::DolHeader;
+use ppc_disas::dol::DolHeader;
 
 use std::{
-    collections::VecDeque,
     fs::{self, File},
     io::Read,
 };

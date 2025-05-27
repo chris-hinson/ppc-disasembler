@@ -1,0 +1,283 @@
+//integer artithmetic instructions
+addx 31 D A B OE 266 Rc
+addcx 31 D A B OE 10 Rc
+addex 31 D A B OE 138 Rc
+addi 14 D A SIMM
+addic 12 D A SIMM
+addic. 13 D A SIMM
+addis 15 D A SIMM
+addmex 31 D A 00000 OE 234 Rc
+addzex 31 D A 00000 OE 202 Rc
+divwx 31 D A B OE 491 Rc
+divwux 31 D A B OE 459 Rc
+mulhwx 31 D A B 0 75 Rc
+mulhwux 31 D A B 0 11 Rc
+mulli 07 D A SIMM
+mullwx 31 D A B OE 235 Rc
+negx 31 D A 00000 OE 104 Rc
+subfx 31 D A B OE 40 Rc
+subfcx 31 D A B OE 8 Rc
+subfex 31 D A B OE 136 Rc
+subficx 08 D A SIMM
+subfmex 31 D A 00000 OE 232 Rc
+subfzex 31 D A 00000 OE 200 Rc
+
+//integer compare
+cmp 31 crfD 0 L A B 0 0
+cmpi 11 crfD 0 L A SIMM
+cmpl 31 crfD 0 L A B 32 0
+cmpli 10 crfD 0 L A UIMM
+
+//integer logical
+andx 31 S A B 28 Rc
+andcx 31 S A B 60 Rc
+andi. 28 S A UIMM
+andis. 29 S A UIMM
+cntlzwx 31 S A 00000 26 Rc
+eqvx 31 S A B 284 Rc
+extsbx 31 S A 00000 954 Rc
+extshx 31 S A 00000 922 Rc
+nandx 31 S A B 476 Rc
+norx 31 S A B 124 Rc
+orx 31 S A B 444 Rc
+orcx 31 S A B 412 Rc
+ori 24 S A UIMM
+oris 25 S A UIMM
+xorx 31 S A B 316 Rc
+xori 26 S A UIMM
+xoris 27 S A UIMM
+
+//integer rotate
+rlwimix 20 S A SH MB ME Rc
+rlwinmx 21 S A SH MB ME Rc
+rlwnmx 23 S A SH MB ME Rc
+
+//integer shift
+slwx 31 S A B 24 Rc
+srawx 31 S A B 792 Rc
+srawix 31 S A SH 824 Rc
+srwx 31 S A B 536 Rc
+
+//fp artithmetic
+faddx 63 D A B 00000 21 Rc
+faddsx 59 D A B 00000 21 Rc
+fdivx 63 D A B 00000 18 Rc
+fdivsx 59 D A B 00000 18 Rc
+fmulx 63 D A 00000 C 25 Rc
+fmulsx 59 D A 00000 C 25 Rc
+fresx 59 D 00000 B 00000 24 Rc
+frsqrtex 63 D 00000 B 00000 26 Rc
+fsubx 63 D A B 00000 20 Rc
+fsubsx 59 D A B 00000 20 Rc
+fselx 63 D A B C 23 Rc
+
+//fp madd
+fmaddx 63 D A B C 29 Rc
+fmaddsx 59 D A B C 29 Rc
+fmsubx 63 D A B C 28 Rc
+fmsubsx 59 D A B C 28 Rc
+fnmaddx 63 D A B C 31 Rc
+fnmaddsx 59 D A B C 31 Rc
+fnmsubx 63 D A B C 30 Rc
+fnmsubsx 59 D A B C 30 Rc
+
+//fp rounding and conversion
+fctiwx 63 D 00000 B 14 Rc
+fctiwzx 63 D 00000 B 15 Rc
+frspx 63 D 00000 B 12 Rc
+
+//fp compare
+fcmpo 63 crfD 00 A B 32 0
+fcmpu 63 crfD 00 A B 0 0
+
+//fp csr
+mcrfs 63 crfD 00 crfS 0000000 64 0
+mffsx 63 D 0000000000 583 Rc
+mtfsb0x 63 crbD 0000000000 70 Rc
+mtfsb1x 63 crbD 0000000000 38 Rc
+mtfsfx 63 0 FM 0 B 711 Rc
+mtfsfix 63 crfD 0000000 IMM 0 134 Rc
+
+//integer load
+lbz 34 D A d
+lbzu 35 D A d
+lbzux 31 D A B 119 0
+lbzx 31 D A B 87 0
+lha 42 D A d
+lhau 43 D A d
+lhaux 31 D A B 375 0
+lhax 31 D A B 343 0
+lhz 40 D A d
+lhzu 41 D A d
+lhzux 31 D A B 311 0
+lhzx 31 D A B 279 0
+lwz 32 D A d
+lwzu 33 D A d
+lwzux 31 D A B 55 0
+lwzx 31 D A B 23 0
+
+//integer store
+stb 38 S A d
+stbu 39 S A d
+stbux 31 S A B 247 0
+stbx 31 S A B 215 0
+sth 44 S A d
+sthu 45 S A d
+sthux 31 S A B 439 0
+sthx 31 S A B 407 0
+stw 36 S A d
+stwu 37 S A d
+stwux 31 S A B 183 0
+stwx 31 S A B 151 0
+
+//integer load and store with byte reverse
+lhbrx 31 D A B 790 0
+lwbrx 31 D A B 534 0
+sthbrx 31 S A B 918 0
+stwbrx 31 S A B 662 0
+
+//integer load and store multiple
+lmw 46 D A d
+stmw 47 S A d
+
+//integer load and store string
+lswi 31 D A NB 597 0
+lswx 31 D A B 533 0
+stswi 31 S A NB 725 0
+stswx 31 S A B 661 0
+
+//mem synch
+eieio 31 000000000000000 854 0
+isync 19 000000000000000 150 0
+lwarx 31 D A B 20 0
+stwcx. 31 S A B 150 1
+sync 31 000000000000000 598 0
+
+//fp load
+lfd 50 D A d
+lfdu 51 D A d
+lfdux 31 D A B 631 0
+lfdx 31 D A B 599 0
+lfs 48 D A d
+lfsu 49 D A d
+lfsux 31 D A B 567 0
+lfsx 31 D A B 535 0
+
+//fp store
+stfd 54 S A d
+stfdu 55 S A d
+stfdux 31 S A B 759 0
+stfdx 31 S A B 727 0
+stfiwx 31 S A B 983 0
+stfs 52 S A d
+stfsu 53 S A d
+stfsux 31 S A B 695 0
+stfsx 31 S A B 663 0
+
+//fp move 
+fabsx 63 D 00000 B 264 Rc
+fmrx 63 D 00000 B 72 Rc
+fnabsx 63 D 00000 B 136 Rc
+fnegx 63 D 00000 B 40 Rc
+
+//branch
+bx 18 LI AA LK
+bcx 16 BO BI BD AA LK
+bcctrx 19 BO BI 00000 528 LK
+bclrx 19 BO BI 00000 16 LK
+
+//condition register logical
+crand 19 crbD crbA crbB 257 0
+crandc 19 crbD crbA crbB 129 0
+creqv 19 crbD crbA crbB 289 0
+crnand 19 crbD crbA crbB 225 0
+crnor 19 crbD crbA crbB 33 0
+cror 19 crbD crbA crbB 449 0
+crorc 19 crbD crbA crbB 417 0
+crxor 19 crbD crbA crbB 193 0
+mcrf 19 crfD 00 crfS 00000000000000000 0
+
+//system linkage instructions
+rfi 19 000000000000000 50 0
+sc 17 0000000000000000000000000 1 0
+
+//trap instructions
+tw 31 TO A B 4 0
+twi 03 TO A SIMM
+
+//processor control instructions
+mcrxr 31 crfS 000000000000 512 0
+mfcr 31 D 0000000000 19 0
+mfmsr 31 D 0000000000 83 0
+mfspr 31 D spr 339 0
+mftb 31 D tpr 371 0
+mtcrf 31 S 0 CRM 0 144 0
+mtmsr 1 31 S 0000000000 146 0
+mtspr 2 31 D spr 467 0
+
+//cache control
+dcbf 31 00000 A B 86 0
+dcbi 31 00000 A B 470 0
+dcbst 31 00000 A B 54 0
+dcbt 31 00000 A B 278 0
+dcbtst 31 00000 A B 246 0
+dcbz 31 00000 A B 1014 0
+icbi 31 00000 A B 982 0
+
+//segment register manip
+mfsr 31 D 0 SR 00000 595 0
+mfsrin 1 31 D 00000 B 659 0
+mtsr 1 31 S 0 SR 00000 210 0
+mtsrin 1 31 S 00000 B 242 0
+
+//tlb
+tlbie 1 31 0000000000 B 306 0
+tlbsync1 31 000000000000000 566 0
+
+//external control
+eciwx 31 D A B 310 0
+ecowx 31 S A B 438 0
+
+//ps load/store
+psq_lx 4 D A B w i 6 0
+psq_stx 4 S A B w i 7 0
+psq_lux 4 D A B w i 38 0
+psq_stux 4 S A B w i 39 0
+psq_l 56 D A w i d
+psq_lu 57 D A w i d
+psq_st 60 S A w i d
+psq_stu 61 S A w i d
+
+//ps fp artithmetic
+ps_div 4 D A B 00000 18 Rc
+ps_sub 4 D A B 00000 20 Rc
+ps_add 4 D A B 00000 21 Rc
+ps_sel 4 D A B C 23 Rc
+ps_res 4 D 00000 B 00000 24 Rc
+ps_mul 4 D A 00000 C 25 Rc
+ps_rsqrte 4 D 00000 B 00000 26 Rc
+ps_msub 4 D A B C 28 Rc
+ps_madd 4 D A B C 29 Rc
+ps_nmsub 4 D A B C 30 Rc
+ps_nmadd 4 D A B C 31 Rc
+ps_neg 4 D 00000 B 40 Rc
+ps_mr 4 D 00000 B 72 Rc
+ps_nabs 4 D 00000 B 136 Rc
+ps_abs 4 D 00000 B 264 Rc
+
+//ps misc
+ps_sum0 4 D A B C 10 Rc
+ps_sum1 4 D A B C 11 Rc
+ps_muls0 4 D A 00000 C 12 Rc
+ps_muls1 4 D A 00000 C 13 Rc
+ps_madds0 4 D A B C 14 Rc
+ps_madds1 4 D A B C 15 Rc
+ps_cmpu0 4 crfD 00 A B 0 0
+ps_cmpo0 4 crfD 00 A B 32 0
+ps_cmpu1 4 crfD 00 A B 64 0
+ps_cmpo1 4 crfD 00 A B 96 0
+ps_merge00 4 D A B 528 Rc
+ps_merge01 4 D A B 560 Rc
+ps_merge10 4 D A B 592 Rc
+ps_merge11 4 D A B 624 Rc
+dcbz_l 4 00000 A B 1014 0
